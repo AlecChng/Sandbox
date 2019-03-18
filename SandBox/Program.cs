@@ -4,15 +4,14 @@
     {
         public static void Main(string[] args)
         {
+            // # TripleStep
             //var tripleStep = new TripleStep();
             //var recursionOnly = tripleStep.TripleStepRecursionOnly(6);
             //var dynamicProgramming = tripleStep.TripleStepDynamicProgramming(6);
             //var memoization = tripleStep.TripleStepMemoization(6);
 
-
-            var robotInAGrid = new RobotInAGrid();
-
-
+            // # RobotInAGrid
+            //var robotInAGrid = new RobotInAGrid();
             // All off limts
             //var grid = new bool[2, 2]; 
 
@@ -32,15 +31,24 @@
             //grid[1, 0] = false;
 
 
-            var grid = new bool[4, 4];
-            SetAllTrue(grid);
-            grid[1, 1] = false;
-            grid[2, 1] = false;
-            grid[3, 1] = false;
-            grid[2, 3] = false;
+            //var grid = new bool[4, 4];
+            //SetAllTrue(grid);
+            //grid[1, 1] = false;
+            //grid[2, 1] = false;
+            //grid[3, 1] = false;
+            //grid[2, 3] = false;
 
-            var path = robotInAGrid.FindRobotPath(grid);
+            //var path = robotInAGrid.FindRobotPath(grid);
 
+
+            // # FindMagicIndex
+            var arr = new int[] { 0, 0, 0, 2, 3, 5, 7, 8 };
+            //var arr = new int[] { 0, 0, 0, 2, 3, 3, 7, 8 };s
+            //var arr = new int[] { 0, 1, 1, 2, 3, 3, 7, 8 };
+
+
+            var magicIndexFinder = new FindMagicIndex();
+            var magicIndex = magicIndexFinder.FindMagicIndexDivConq(arr);
         }
 
         private static void SetAllTrue(bool[,] grid)
