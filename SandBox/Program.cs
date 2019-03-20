@@ -1,4 +1,7 @@
-﻿namespace SandBox
+﻿using System;
+using System.Linq;
+
+namespace SandBox
 {
     public class Program
     {
@@ -42,13 +45,29 @@
 
 
             // # FindMagicIndex
-            var arr = new int[] { 0, 0, 0, 2, 3, 5, 7, 8 };
-            //var arr = new int[] { 0, 0, 0, 2, 3, 3, 7, 8 };s
-            //var arr = new int[] { 0, 1, 1, 2, 3, 3, 7, 8 };
+            //var arr = new int[] { 1, 3, 4, 4, 4, 6, 7, 8 };
+            //var arr = new int[] { 0, 0, 0, 2, 3, 3, 7, 8 }; 
+            //var arr = new int[] { 100, 100, 100, 100, 100, 100, 100};
 
 
-            var magicIndexFinder = new FindMagicIndex();
-            var magicIndex = magicIndexFinder.FindMagicIndexDivConq(arr);
+            //var magicIndexFinder = new FindMagicIndex();
+            //var magicIndex = magicIndexFinder.FindMagicIndexDivConq(arr);
+
+            // # Permutations without Dups
+            //var srcString = "abc";
+            //var srcString = "aba";
+            //var permutationCalc = new Permutations();
+            //var perms = permutationCalc.FindAllPermutations(srcString);
+            //var permsDeDuped = permutationCalc.FindAllPermutationsDeDupBruteForce(srcString);
+
+            //var permsDeDupedOptimized = permutationCalc.FindAllPermutationsDeDupMemoization(srcString);
+
+            // # Parens
+            var parenGenerator = new Paren();
+            var parenResult = parenGenerator.ParenGenOptimized(4).ToList();
+            parenResult.Sort();
+            var parenSolution = parenGenerator.ParenGenSolution(4).ToList();
+            parenSolution.Sort();
         }
 
         private static void SetAllTrue(bool[,] grid)

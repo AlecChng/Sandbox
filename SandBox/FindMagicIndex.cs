@@ -1,4 +1,6 @@
-﻿namespace SandBox
+﻿using System;
+
+namespace SandBox
 {
     public class FindMagicIndex
     {
@@ -19,30 +21,23 @@
                 return -1;
             }
 
-            int endVal = arr[end];
-            if (endVal == end)
+            int midIndex = (start + end) / 2;
+            int midVal = arr[midIndex];
+            if (midVal == midIndex)
             {
-                return end;
-            }
-            else if ((endVal < end && endVal < start) || (start == end && endVal != end))
-            {
-                return -1;
+                return midIndex;
             }
 
-            if (endVal < end && endVal >= start)
+            var leftIndex = Math.Min(midIndex - 1, midVal);
+            var leftMagic = FindMagicIndexDivConqHelper(arr, start, leftIndex);
+            if (leftMagic >= 0)
             {
-                end = endVal + 1;
-            }
-            int mid = (start + end) / 2;
-
-            var rightMagic = FindMagicIndexDivConqHelper(arr, mid + 1, end - 1);
-            if (rightMagic >= 0)
-            {
-                return rightMagic;
+                return leftMagic;
             }
 
-            var leftMagic = FindMagicIndexDivConqHelper(arr, start, mid);
-            return leftMagic;
+            var rightIndex = Math.Max(midIndex + 1, midVal);
+            var rightMagic = FindMagicIndexDivConqHelper(arr, rightIndex, end);
+            return rightMagic;
         }
     }
 }
