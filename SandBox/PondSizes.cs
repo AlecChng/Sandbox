@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace SandBox
 {
+    /// <summary>
+    /// 16.19
+    /// </summary>
     public class PondSizes
     {
         public List<int> GetAllPondSizes(int[,] grid)
